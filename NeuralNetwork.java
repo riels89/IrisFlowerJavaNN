@@ -212,18 +212,18 @@ public class NeuralNetwork {
 		for(int i=0;i<inputWeights.length;i++)
 		{
 			for(int j=0;j<inputWeights[i].length;j++)
-			inputWeights[i][j] = new Weight(2 * Math.random() - 1);
+			inputWeights[i][j] = new Weight(0.01 * Math.random());
 		}
 		for(int i=0;i<outputWeights.length;i++)
 		{
 			for(int j=0;j<outputWeights[i].length;j++)
-			outputWeights[i][j] = new Weight(2 * Math.random() - 1);
+			outputWeights[i][j] = new Weight(0.01 * Math.random());
 		}
 		//fills input neurons
 		for(int i=0;i<hiddenNeurons.length;i++)
 		{
 			hiddenNeurons[i] = new Neuron(inputWeights[i], BIAS);
-			hiddenNeurons[i].setActivationFunction(ActivationFunctions.SIGMOID);
+			hiddenNeurons[i].setActivationFunction(ActivationFunctions.ReLU);
 		}
 		//fills output neurons
 		for(int i=0;i<outputNeurons.length;i++)
